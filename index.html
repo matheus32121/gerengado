@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gerenciamento de Gados - Fazenda</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Gerenciamento de Gados</h1>
+  </header>
+
+  <section class="controls">
+    <form id="cattleForm">
+      <input type="text" id="name" placeholder="Nome do Gado" required>
+      <input type="number" id="age" placeholder="Idade (anos)" required>
+      <input type="number" id="weight" placeholder="Peso (kg)" required>
+      <input type="text" id="breed" placeholder="Raça" required>
+      <button type="submit">Adicionar Gado</button>
+    </form>
+    <div class="filters">
+      <input type="text" id="search" placeholder="Pesquisar...">
+      <select id="sort">
+        <option value="name">Ordenar por Nome</option>
+        <option value="age">Ordenar por Idade</option>
+        <option value="weight">Ordenar por Peso</option>
+        <option value="breed">Ordenar por Raça</option>
+      </select>
+      <button id="exportAllBtn">Exportar Todos</button>
+    </div>
+  </section>
+
+  <section class="list-section">
+    <h2>Lista de Gados</h2>
+    <ul id="cattleList"></ul>
+  </section>
+
+  <section class="charts">
+    <h2>Estatísticas</h2>
+    <canvas id="cattleChart"></canvas>
+    <canvas id="cattleChart2"></canvas>
+  </section>
+
+  <!-- Modal para Visualizar/Editar Detalhes -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h2>Detalhes do Gado</h2>
+      <div id="modalBody"></div>
+      <button id="saveModalBtn">Salvar Alterações</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+  <script src="chart.js"></script>
+  <script src="export.js"></script>
+</body>
+</html>
